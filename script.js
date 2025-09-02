@@ -1,13 +1,15 @@
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Get references to interactive elements
-    const colorBtn = document.getElementById('colorBtn');
-    const welcomeBtn = document.getElementById('welcomeBtn');
-    const bioText = document.getElementById('bioText');
-    const profileImg = document.getElementById('profileImg');
     
-    // Theme toggle functionality
+    const colorBtn = document.getElementById('colorBtn');
+    const randomBtn = document.getElementById('randomBtn');
+    const bioDesc = document.getElementById('bioDesc');
+    const profileImg = document.getElementById('profileImg');
+    const modal = document.getElementById('messageModal');
+    const modalMessage = document.getElementById('modalMessage');
+    const closeBtn = document.querySelector('.close-btn');
+    
+    
     let isDarkTheme = false;
     
     colorBtn.addEventListener('click', function() {
@@ -15,54 +17,85 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isDarkTheme) {
             document.body.classList.add('dark-theme');
-            colorBtn.textContent = 'Light Theme';
+            // Switch to sun icon for light mode
+            colorBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="m4.93 4.93 1.41 1.41"/>
+                    <path d="m17.66 17.66 1.41 1.41"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+                    <path d="m6.34 17.66-1.41 1.41"/>
+                    <path d="m19.07 4.93-1.41 1.41"/>
+                </svg>
+            `;
         } else {
             document.body.classList.remove('dark-theme');
-            colorBtn.textContent = 'Dark Theme';
+            // Switch to moon icon for dark mode
+            colorBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
+                    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+                </svg>
+            `;
         }
         
-        // Add a subtle animation effect
+        
         colorBtn.style.transform = 'scale(0.95)';
         setTimeout(() => {
             colorBtn.style.transform = 'scale(1)';
         }, 150);
     });
     
-    // Welcome message functionality
-    welcomeBtn.addEventListener('click', function() {
+   
+    randomBtn.addEventListener('click', function() {
         const welcomeMessages = [
-            "Welcome to my digital space! 🚀",
-            "Thanks for stopping by! 👋",
-            "Great to see you here! ✨",
-            "Hello there, fellow developer! 💻",
-            "Welcome aboard! Let's build something amazing! 🎯"
+            "I peaked Ascendant 3 in Valorant!",
+            "I listen to a lot of K-pop! My favorite groups are Izna, Kep1er, and Zerobaseone!",
+            "I took this program because of practicality!",
+            "I'm naturally a shy person",
+            "My favorite food is Sisig!"
         ];
         
         const randomMessage = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
-        alert(randomMessage);
+        modalMessage.textContent = randomMessage;
+        modal.style.display = 'block';
         
-        // Add click animation
-        welcomeBtn.style.transform = 'scale(0.95)';
+       
+        randomBtn.style.transform = 'scale(0.95)';
         setTimeout(() => {
-            welcomeBtn.style.transform = 'scale(1)';
+            randomBtn.style.transform = 'scale(1)';
         }, 150);
     });
+
+    // Modal close functionality
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
     
-    // Bio text color change on double-click
-    bioText.addEventListener('dblclick', function() {
+   
+    bioDesc.addEventListener('dblclick', function() {
         const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         
-        bioText.style.color = randomColor;
-        bioText.style.transition = 'color 0.3s ease';
+        bioDesc.style.color = randomColor;
+        bioDesc.style.transition = 'color 0.3s ease';
         
-        // Reset color after 3 seconds
+       
         setTimeout(() => {
-            bioText.style.color = '';
+            bioDesc.style.color = '';
         }, 3000);
     });
     
-    // Profile image hover effect with rotation
+    
     profileImg.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.05) rotate(5deg)';
     });
@@ -71,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.transform = 'scale(1) rotate(0deg)';
     });
     
-    // Skill tags interactive hover effect
+    
     const skillTags = document.querySelectorAll('.skill-tag');
     skillTags.forEach(tag => {
         tag.addEventListener('click', function() {
@@ -82,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add smooth scrolling for better UX (if page gets longer)
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -95,15 +128,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Console welcome message for developers who inspect the page
-    console.log(`
-    🎉 Welcome to Alex Johnson's Portfolio!
-    
-    Thanks for checking out the code! 
-    If you're a fellow developer, feel free to reach out.
-    
-    Built with: HTML5, CSS3, and Vanilla JavaScript
-    `);
-    
 });
