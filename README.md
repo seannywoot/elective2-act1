@@ -6,7 +6,7 @@
 
 ## 📋 Project Overview
 
-A modern, responsive personal portfolio website showcasing my skills as a Front-End Developer and UI/UX Designer. The site features an elegant design with interactive elements, dark/light theme toggle, and smooth animations.
+A modern, responsive personal portfolio landing page showcasing my skills as a Front-End Developer and UI/UX Designer. The site features an elegant design with interactive elements, dark/light theme toggle, and smooth animations.
 
 ## ✨ Features
 
