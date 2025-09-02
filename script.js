@@ -75,10 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillTags = document.querySelectorAll('.skill-tag');
     skillTags.forEach(tag => {
         tag.addEventListener('click', function() {
-            // Create a ripple effect
-            this.style.transform = 'scale(1.1)';
-            this.style.boxShadow = '0 0 20px rgba(102, 126, 234, 0.6)';
-            
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
                 this.style.boxShadow = '';
