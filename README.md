@@ -1,8 +1,8 @@
 # Personal Portfolio - Seann Tamondong
 
 **Student:** Tamondong, Seann Patrick S.  
-**Course:** BSIT 3-A  
-**Subject:** IT Elective 2 - Web/Mobile Frontend Development (LAB)
+**Program:** BSIT 3-A  
+**Course:** IT Elective 2 - Web/Mobile Frontend Development (LAB)
 
 ## 📋 Project Overview
 
