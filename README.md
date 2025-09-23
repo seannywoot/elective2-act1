@@ -1,12 +1,12 @@
 # Personal Portfolio - Seann Tamondong
 
 **Student:** Tamondong, Seann Patrick S.  
-**Course:** BSIT 3-A  
-**Subject:** IT Elective 2 - Web/Mobile Frontend Development (LAB)
+**Program:** BSIT 3-A  
+**Course:** IT Elective 2 - Web/Mobile Frontend Development (LAB)
 
 ## 📋 Project Overview
 
-A modern, responsive personal portfolio website showcasing my skills as a Front-End Developer and UI/UX Designer. The site features an elegant design with interactive elements, dark/light theme toggle, and smooth animations.
+A modern, responsive personal portfolio landing page showcasing my skills as a Front-End Developer and UI/UX Designer. The site features an elegant design with interactive elements, dark/light theme toggle, and smooth animations.
 
 ## ✨ Features
 
